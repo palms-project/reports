@@ -1,6 +1,5 @@
 .PHONY: lint pre-commit chktex clean
 
-
 lint: chktex pre-commit
 
 pre-commit:
@@ -10,4 +9,11 @@ chktex:
 	find . -type f -name '*.tex' -exec chktex {} \;
 
 clean:
-	latexmk -C
+	find . -type f -name '*.aux' -exec rm {} \;
+	find . -type f -name '*.fdb_latexmk' -exec rm {} \;
+	find . -type f -name '*.fls' -exec rm {} \;
+	find . -type f -name '*.log' -exec rm {} \;
+	find . -type f -name '*.synctex.gz' -exec rm {} \;
+
+full-clean: clean
+		find . -type f -name '*.pdf' -exec rm {} \;
