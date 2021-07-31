@@ -1,4 +1,9 @@
-.PHONY: lint pre-commit chktex clean
+.PHONY: all lint pre-commit chktex clean
+
+.DEFAULT_GOAL := all
+
+all:
+	make -C ./facss-scix-2021
 
 lint: chktex pre-commit
 
