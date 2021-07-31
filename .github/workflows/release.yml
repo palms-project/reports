@@ -10,9 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Latexmk
-        run: sudo apt install latexmk
-
       - name: Build
       - uses: xu-cheng/texlive-action/full@v1
         with:
