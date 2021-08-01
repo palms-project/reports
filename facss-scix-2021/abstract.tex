@@ -1,11 +1,59 @@
 \documentclass[12pt]{article}
 
-\title{Precise Acquisition LIBS Movement Software:} % TODO: title
-\author{Gideon Shaked}
+\title{Precise Acquisition LIBS Movement Software: An Easily Usable Control Software for Robotized Optomechanical Systems}
+\author{
+    Gideon Shaked \\ \textbf{Presenting Author} \and
+    Max Vallone \\ \textbf{Non-presenting Author} \and
+    Robert Dubard \\ \textbf{Non-presenting Author} \and
+    Claudia Ochatt \\ \textbf{Project Lead}
+}
 \date{\today}
 
-\usepackage{mathptmx}
+\usepackage{csquotes}
 
 \begin{document}
-    \maketitle  
+    \maketitle
+
+    \begin{itemize}
+        \item \textbf{Novel Aspect:} In-house development of flexible and user-friendly control software for robotized optomechanical positioning systems
+        \item \textbf{Primary Research Category:} LIBS -- Innovative instrumentation
+        \item \textbf{Secondary Research Category:} LIBS -- Methodology
+    \end{itemize}
+
+    Emerging technologies for robotic positioning of optical components show promise in their ability to deliver improved accuracy and precision. 
+    However, 
+    they generally lack the foundational software necessary for operation by researchers. 
+    Our goal in filling this gap was to 
+    create an easily usable control software that maintains the accuracy deliverable by robotic systems. 
+    We developed the Precise Acquisition LIBS Movement Software (PALMS), 
+    a program designed to control optomechanical robotic systems. 
+    We adopted a client-server approach to programming PALMS\@. 
+    PALMS consists of a self-contained graphical user interface client that can run on 
+    Windows, 
+    macOS, 
+    and Linux 
+    and a server that runs on a Raspberry Pi Zero 
+    that is directly connected to the robotized positioning system. 
+    PALMS allows the operator to position multiple axes across their ranges of motion. 
+    PALMS also features a lock functionality that lets the operator \enquote{lock} all of the axes for as long as desired up to 60 seconds. 
+    This enables sample switching 
+    and manual movements 
+    in close proximity to the robotized positioning system 
+    without accidentally affecting the arrangement of the system. 
+    The client and the server communicate via TCP sockets to achieve low latency and connection integrity. 
+    Because the client and server only need to be on the same local area network to communicate, 
+    the operator can remotely control the system and monitor it via networked cameras. 
+    As such, people who were previously unable to operate or observe the operation of a positioning system 
+    due to lack of space or inability to wear protective gear 
+    can now do so. 
+    When used in conjunction with a sample and fiber optic positioning system 
+    such as the Five Axis Positioning System (FAPS), 
+    PALMS allows the operator to update the desired planar position (XY), 
+    effective focal lens distance (Z), 
+    angular tilt of the sample relative to the fiber optic (A), 
+    and fiber optic position (B). 
+    By making the PALMS software open source under the MIT license, 
+    researchers can freely use and modify it to fit their specific needs. 
+    PALMS opens the door for easily usable software-controlled positioning in the lab.
+
 \end{document}
