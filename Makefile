@@ -21,4 +21,4 @@ clean:
 	find . -type f -name '*.synctex.gz' -exec rm {} \;
 
 full-clean: clean
-		find . -type f -name '*.pdf' -exec rm {} \;
+	find . -type f -name '*.pdf' -exec rm {} \;

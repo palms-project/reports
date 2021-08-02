@@ -9,7 +9,7 @@
 </div>
 
 This repository contains the reports for the PALMS project. 
-Each report is written in LaTeX, and ech one is built as a PDF automatically and made available under the [latest release](https://github.com/palms-project/reports/releases/latest).
+Each report is written in LaTeX, and each one is built as a PDF automatically and made available under the [latest release](https://github.com/palms-project/reports/releases/latest).
 
 ## Building
 
