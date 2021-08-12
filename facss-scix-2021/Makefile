@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := abstract.pdf
+.DEFAULT_GOAL := scix-abstract.pdf
 
-abstract.pdf: abstract.tex
-	latexmk -pdf abstract.tex
+scix-abstract.pdf: scix-abstract.tex
+	latexmk -pdf scix-abstract.tex

@@ -31,7 +31,7 @@ make
 ```
 .
 ├── facss-scix-2021
-│   ├── abstract.tex
+│   ├── scix-abstract.tex
 │   ├── Makefile
 ├── LICENSE
 ├── Makefile
