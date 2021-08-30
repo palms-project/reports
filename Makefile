@@ -3,7 +3,8 @@
 .DEFAULT_GOAL := all
 
 all:
-	make -C ./facss-scix-2021
+	make -C ./facss-scix-2021/abstract/
+	make -C ./facss-scix-2021/poster/
 
 lint: chktex pre-commit
 
