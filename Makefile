@@ -19,7 +19,8 @@ clean:
 	find . -type f -name '*.fdb_latexmk' -exec rm {} \;
 	find . -type f -name '*.fls' -exec rm {} \;
 	find . -type f -name '*.log' -exec rm {} \;
-	find . -type f -name '*.synctex.gz' -exec rm {} \;
-
-full-clean: clean
-	find . -type f -name '*.pdf' -exec rm {} \;
+	find . -type f -name '*.nav' -exec rm {} \;
+	find . -type f -name '*.out' -exec rm {} \;
+	find . -type f -name '*.snm' -exec rm {} \;
+	find . -type f -name '*.toc' -exec rm {} \;
+	
