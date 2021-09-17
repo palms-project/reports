@@ -11,11 +11,22 @@
 \usepackage{lmodern}
 \usepackage[size=custom,width=120,height=72,scale=1.0]{beamerposter}
 \usetheme{gemini}
-\usecolortheme{gemini}
+\usecolortheme{ransom}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{tikz}
 \usepackage{pgfplots}
+
+% ====================
+% Extras
+% ====================
+
+\graphicspath{ {./assets/} }
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
 
 % ====================
 % Lengths
@@ -25,8 +36,10 @@
 % (N+1)*\sepwidth + N*\colwidth = \paperwidth
 \newlength{\sepwidth}
 \newlength{\colwidth}
-\setlength{\sepwidth}{0.025\paperwidth}
-\setlength{\colwidth}{0.3\paperwidth}
+%\setlength{\sepwidth}{0.025\paperwidth}
+%\setlength{\colwidth}{0.3\paperwidth}
+\setlength{\sepwidth}{0.02\paperwidth}
+\setlength{\colwidth}{0.225\paperwidth}
 
 \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
 
@@ -44,11 +57,11 @@
 % Footer (optional)
 % ====================
 
-\footercontent{
-  \href{https://github.com/palms-project/palms}{https://github.com/palms-project/palms} \hfill
-  FACSS SciX 2021, Providence, RI, United States \hfill
-  \href{mailto:22gshaked@ransomeverglades.org}{22gshaked@ransomeverglades.org}
-  }
+%\footercontent{
+%  \href{https://github.com/palms-project/palms}{https://github.com/palms-project/palms} \hfill
+%  FACSS SciX 2021, Providence, RI, United States \hfill
+%  \href{mailto:22gshaked@ransomeverglades.org}{22gshaked@ransomeverglades.org}
+%  }
 % (can be left out to remove footer)
 
 % ====================
@@ -57,7 +70,7 @@
 
 % use this to include logos on the left and/or right side of the header:
 % \logoright{\includegraphics[height=7cm]{logo1.pdf}}
-\logoleft{\includegraphics[height=7cm]{ransom-logo.pdf}}
+\logoleft{\includegraphics[height=8cm]{assets/ransom-logo.pdf}}
 
 % ====================
 % Body
@@ -71,65 +84,37 @@
 
 \begin{column}{\colwidth}
 
-  \begin{block}{A block title}
+  \begin{block}{Background}
 
-    Some block contents, followed by a diagram, followed by a dummy paragraph.
+    Emerging technologies for robotic positioning of optical components generally lack the foundational software necessary for operation by researchers.
 
-    \begin{figure}
-      \centering
-      \begin{tikzpicture}[scale=6]
-        \draw[step=0.25cm,color=gray] (-1,-1) grid (1,1);
-        \draw (1,0) -- (0.2,0.2) -- (0,1) -- (-0.2,0.2) -- (-1,0)
-          -- (-0.2,-0.2) -- (0,-1) -- (0.2,-0.2) -- cycle;
-      \end{tikzpicture}
-      \caption{A figure caption.}
-    \end{figure}
+    Even if the appropriate software for manipulating a robotized positioning system exists, 
+    it is generally poorly documented, 
+    unmaintained, 
+    and mostly unsuitable for day-to-day use in a working lab.
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies
-    eget libero ac ullamcorper. Integer et euismod ante. Aenean vestibulum
-    lobortis augue, ut lobortis turpis rhoncus sed. Proin feugiat nibh a
-    lacinia dignissim. Proin scelerisque, risus eget tempor fermentum, ex
-    turpis condimentum urna, quis malesuada sapien arcu eu purus.
+    In order for robotized optomechanical systems to reach their full potential, 
+    researchers must have access to 
+    flexible, 
+    user-friendly,
+    and open-source optomechanical positioning software.
 
   \end{block}
 
-  \begin{block}{A block containing a list}
+  \begin{alertblock}{Objectives}
 
-    Nam vulputate nunc felis, non condimentum lacus porta ultrices. Nullam sed
-    sagittis metus. Etiam consectetur gravida urna quis suscipit.
-
-    \begin{itemize}
-      \item \textbf{Mauris tempor} risus nulla, sed ornare
-      \item \textbf{Libero tincidunt} a duis congue vitae
-      \item \textbf{Dui ac pretium} morbi justo neque, ullamcorper
-    \end{itemize}
-
-    Eget augue porta, bibendum venenatis tortor.
-
-  \end{block}
-
-  \begin{alertblock}{A highlighted block}
-
-    This block catches your eye, so \textbf{important stuff} should probably go
-    here.
-
-    Curabitur eu libero vehicula, cursus est fringilla, luctus est. Morbi
-    consectetur mauris quam, at finibus elit auctor ac. Aliquam erat volutpat.
-    Aenean at nisl ut ex ullamcorper eleifend et eu augue. Aenean quis velit
-    tristique odio convallis ultrices a ac odio.
+    The primary objective of this project is to develop a robotized optomechanical positioning software with the following qualities:
 
     \begin{itemize}
-      \item \textbf{Fusce dapibus tellus} vel tellus semper finibus. In
-        consequat, nibh sed mattis luctus, augue diam fermentum lectus.
-      \item \textbf{In euismod erat metus} non ex. Vestibulum luctus augue in
-        mi condimentum, at sollicitudin lorem viverra.
-      \item \textbf{Suspendisse vulputate} mauris vel placerat consectetur.
-        Mauris semper, purus ac hendrerit molestie, elit mi dignissim odio, in
-        suscipit felis sapien vel ex.
+      \item \textbf{User-friendly:} Even the most technically capable software won't be useful if it isn't easy to use. 
+                                    Software tooling should have a gentle learning curve and should be usable with minimal training. 
+      \item \textbf{Actively maintained:} Software and its documentation needs to be updated and patched regularly in order to deal with unforeseen bugs, 
+                                  security vulnerabilities, and changing environments.
+      \item \textbf{Flexible:} In order for researchers to meet their specific needs with a positioning software released into the commons,
+                                  they must be able to modify it to their specifications.
+      \item \textbf{Open-source:} Researchers need the freedom to audit, adapt, and share modifications to critical scientific code. 
+                                  Without such freedom, researchers run the risk of legal jeopardy and introduce privacy and security concerns.
     \end{itemize}
-
-    Aenean tincidunt risus eros, at gravida lorem sagittis vel. Vestibulum ante
-    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
 
   \end{alertblock}
 
@@ -139,89 +124,53 @@
 
 \begin{column}{\colwidth}
 
-  \begin{block}{A block containing an enumerated list}
+  \begin{block}{Design}
 
-    Vivamus congue volutpat elit non semper. Praesent molestie nec erat ac
-    interdum. In quis suscipit erat. \textbf{Phasellus mauris felis, molestie
-    ac pharetra quis}, tempus nec ante. Donec finibus ante vel purus mollis
-    fermentum. Sed felis mi, pharetra eget nibh a, feugiat eleifend dolor. Nam
-    mollis condimentum purus quis sodales. Nullam eu felis eu nulla eleifend
-    bibendum nec eu lorem. Vivamus felis velit, volutpat ut facilisis ac,
-    commodo in metus.
+    We adopted a client-server approach to programming PALMS\@, 
+    which consists of a self-contained graphical user interface client that can run on 
+    Windows, 
+    macOS, 
+    and Linux, 
+    and a server that runs on a Raspberry Pi Zero 
+    directly connected to a robotized positioning system.
 
-    \begin{enumerate}
-      \item \textbf{Morbi mauris purus}, egestas at vehicula et, convallis
-        accumsan orci. Orci various natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      \item \textbf{Cras vehicula blandit urna ut maximus}. Aliquam blandit nec
-        massa ac sollicitudin. Curabitur cursus, metus nec imperdiet bibendum,
-        velit lectus faucibus dolor, quis gravida metus mauris gravida turpis.
-      \item \textbf{Vestibulum et massa diam}. Phasellus fermentum augue non
-        nulla accumsan, non rhoncus lectus condimentum.
-    \end{enumerate}
-
-  \end{block}
-
-  \begin{block}{Fusce aliquam magna velit}
-
-    Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
-    vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
-    velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
-    molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
-    posuere.
+    The client and the server communicate via TCP sockets to achieve reasonably low latency and connection integrity.
 
     \begin{figure}
       \centering
-      \begin{tikzpicture}
-        \begin{axis}[
-            scale only axis,
-            no markers,
-            domain=0:2*pi,
-            samples=100,
-            axis lines=center,
-            axis line style={-},
-            ticks=none]
-          \addplot[red] {sin(deg(x))};
-          \addplot[blue] {cos(deg(x))};
-        \end{axis}
-      \end{tikzpicture}
-      \caption{Another figure caption.}
+      \includegraphics[scale=0.8]{palms-gui}
+      \caption{PALMS graphical user interface}
     \end{figure}
 
   \end{block}
 
-  \begin{block}{Nam cursus consequat egestas}
+  \begin{block}{User Experience}
 
-    Nulla eget sem quam. Ut aliquam volutpat nisi vestibulum convallis. Nunc a
-    lectus et eros facilisis hendrerit eu non urna. Interdum et malesuada fames
-    ac ante \textit{ipsum primis} in faucibus. Etiam sit amet velit eget sem
-    euismod tristique. Praesent enim erat, porta vel mattis sed, pharetra sed
-    ipsum. Morbi commodo condimentum massa, \textit{tempus venenatis} massa
-    hendrerit quis. Maecenas sed porta est. Praesent mollis interdum lectus,
-    sit amet sollicitudin risus tincidunt non.
+    PALMS is designed to be used with minimal engagement from the operator.
+    It provides a simple workflow that streamlines data acquisition with LIBS.
 
-    Etiam sit amet tempus lorem, aliquet condimentum velit. Donec et nibh
-    consequat, sagittis ex eget, dictum orci. Etiam quis semper ante. Ut eu
-    mauris purus. Proin nec consectetur ligula. Mauris pretium molestie
-    ullamcorper. Integer nisi neque, aliquet et odio non, sagittis porta justo.
-
+    \heading{Features}
     \begin{itemize}
-      \item \textbf{Sed consequat} id ante vel efficitur. Praesent congue massa
-        sed est scelerisque, elementum mollis augue iaculis.
-        \begin{itemize}
-          \item In sed est finibus, vulputate
-            nunc gravida, pulvinar lorem. In maximus nunc dolor, sed auctor eros
-            porttitor quis.
-          \item Fusce ornare dignissim nisi. Nam sit amet risus vel lacus
-            tempor tincidunt eu a arcu.
-          \item Donec rhoncus vestibulum erat, quis aliquam leo
-            gravida egestas.
-        \end{itemize}
-      \item \textbf{Sed luctus, elit sit amet} dictum maximus, diam dolor
-        faucibus purus, sed lobortis justo erat id turpis.
-      \item \textbf{Pellentesque facilisis dolor in leo} bibendum congue.
-        Maecenas congue finibus justo, vitae eleifend urna facilisis at.
+      \item When used in conjunction with a robotized multi-axial optomechanical positioning system, 
+      PALMS allows the operator to update the 
+      desired planar position (XY), 
+      3rd axis distance (Z), 
+      angular tilt between alternate optics components (A), 
+      and alternate optic distance (B).
+      \item PALMS also features a lock functionality that lets the operator \enquote{lock} all of the axes for as long as desired for up to 60 seconds. 
+      This enables sample switching 
+      and movements in close proximity to the positioning system without risking an unintentional displacement of the sample.
+
     \end{itemize}
+
+    \heading{See It in Action}
+
+    Scan the QR code below to watch a demonstration.
+
+    \begin{figure}
+      \centering
+      \includegraphics[scale=0.08]{demo-qr-link}
+    \end{figure}
 
   \end{block}
 
@@ -231,69 +180,61 @@
 
 \begin{column}{\colwidth}
 
-  \begin{block}{A block containing some math}
+  \begin{block}{Remote Operation}
 
-    Nullam non est elit. In eu ornare justo. Maecenas porttitor sodales lacus,
-    ut cursus augue sodales ac.
+    Because the PALMS client and server only need to have a network connection to communicate, 
+    the operator can remotely control the robotized positioning system and monitor it via networked cameras.
+      
+    \begin{itemize}
+      \item PALMS allows remote operation under conditions that are not ideal for in person operation, 
+      such as a lack of space in the LIBS enclosure, 
+      an inability to wear protective gear, 
+      telework, 
+      and safety concerns if working with hazardous samples.
 
-    $$
-    \int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
-    $$
+      \item With remote desktop software, PALMS is globally accessible over the internet.
+      \item Educators can let students who are present in person or virtually observe the operation of a LIBS instrument.
+    \end{itemize}
 
-    Interdum et malesuada fames $\{1, 4, 9, \ldots\}$ ac ante ipsum primis in
-    faucibus. Cras eleifend dolor eu nulla suscipit suscipit. Sed lobortis non
-    felis id vulputate.
+    \begin{figure}
+      \centering
+      \includegraphics[scale=0.4]{palms-diagram}
+      \caption{PALMS component diagram}
+    \end{figure}
 
-    \heading{A heading inside a block}
+  \end{block}
+  
+\end{column}
 
-    Praesent consectetur mi $x^2 + y^2$ metus, nec vestibulum justo viverra
-    nec. Proin eget nulla pretium, egestas magna aliquam, mollis neque. Vivamus
-    dictum $\mathbf{u}^\intercal\mathbf{v}$ sagittis odio, vel porta erat
-    congue sed. Maecenas ut dolor quis arcu auctor porttitor.
+\separatorcolumn
 
-    \heading{Another heading inside a block}
+\begin{column}{\colwidth}
 
-    Sed augue erat, scelerisque a purus ultricies, placerat porttitor neque.
-    Donec $P(y \mid x)$ fermentum consectetur $\nabla_x P(y \mid x)$ sapien
-    sagittis egestas. Duis eget leo euismod nunc viverra imperdiet nec id
-    justo.
+  \begin{block}{Results}
+
+    When PALMS was introduced into the research workflow in our lab, there was an immediate, clearly noticeable benefit.
+    With only a few minutes of training, researchers were acquiring data with the LIBS instrument much more 
+    effectively, efficiently, and reproducibly than before.
+    
+    Because the operators could record the exact position of the sample, they could easily and quickly reproduce their results.
+    Additionally, they could rapidly analyze a large number of dimensionally similar samples while reducing experimental error.
+
+    When collaborating, researchers also found that the ability to remotely adjust the sample position 
+    and the capability to remotely observe via networked cameras invaluable.
+    Furthermore, several team members were able to telework without detriment to the quality of their LIBS data.
 
   \end{block}
 
-  \begin{block}{Nullam vel erat at velit convallis laoreet}
+  \begin{block}{Conclusion}
 
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Phasellus libero enim, gravida sed erat sit amet,
-    scelerisque congue diam. Fusce dapibus dui ut augue pulvinar iaculis.
-
-    \begin{table}
-      \centering
-      \begin{tabular}{l r r c}
-        \toprule
-        \textbf{First column} & \textbf{Second column} & \textbf{Third column} & \textbf{Fourth} \\
-        \midrule
-        Foo & 13.37 & 384,394 & $\alpha$ \\
-        Bar & 2.17 & 1,392 & $\beta$ \\
-        Baz & 3.14 & 83,742 & $\delta$ \\
-        Qux & 7.59 & 974 & $\gamma$ \\
-        \bottomrule
-      \end{tabular}
-      \caption{A table caption.}
-    \end{table}
-
-    Donec quis posuere ligula. Nunc feugiat elit a mi malesuada consequat. Sed
-    imperdiet augue ac nibh aliquet tristique. Aenean eu tortor vulputate,
-    eleifend lorem in, dictum urna. Proin auctor ante in augue tincidunt
-    tempor. Proin pellentesque vulputate odio, ac gravida nulla posuere
-    efficitur. Aenean at velit vel dolor blandit molestie. Mauris laoreet
-    commodo quam, non luctus nibh ullamcorper in. Class aptent taciti sociosqu
-    ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-    Nulla various finibus volutpat. Mauris molestie lorem tincidunt, iaculis
-    libero at, gravida ante. Phasellus at felis eu neque suscipit suscipit.
-    Integer ullamcorper, dui nec pretium ornare, urna dolor consequat libero,
-    in feugiat elit lorem euismod lacus. Pellentesque sit amet dolor mollis,
-    auctor urna non, tempus sem.
+    PALMS shows that successful scientific research requires well-built scientific software.
+    During testing, researchers using PALMS reported that it was 
+    easily usable, 
+    reliable, 
+    and provided a much needed optimization for LIBS.
+    Without the aforementioned qualities guaranteed by PALMS, 
+    much of the research conducted in our lab would have been much more difficult and arduous to complete.
+    The PALMS project allows robotized optomechanical systems to deliver their full potential.
 
   \end{block}
 
