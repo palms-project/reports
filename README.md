@@ -30,10 +30,7 @@ make
 
 ```
 .
-├── facss-scix-2021
-│   ├── scix-abstract.tex
-│   ├── Makefile
-├── LICENSE
-├── Makefile
-└── README.md
+└── facss-scix-2021
+    ├── abstract
+    └── poster
 ```
