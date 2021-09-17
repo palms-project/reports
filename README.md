@@ -4,7 +4,7 @@
 
 <img alt="Build Status" src="https://img.shields.io/github/workflow/status/palms-project/reports/Release/master?label=Build&logo=github">
 <img alt="Lint Status" src="https://img.shields.io/github/workflow/status/palms-project/reports/Lint/master?label=Lint&logo=github">
-<img alt="License" src="https://img.shields.io/github/license/palms-project/reports?label=License">
+<img alt="License" src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg">
 
 </div>
 
