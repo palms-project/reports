@@ -23,4 +23,6 @@ clean:
 	find . -type f -name '*.out' -exec rm {} \;
 	find . -type f -name '*.snm' -exec rm {} \;
 	find . -type f -name '*.toc' -exec rm {} \;
+	find . -type f -name '*.bbl' -exec rm {} \;
+	find . -type f -name '*.blg' -exec rm {} \;
 	
